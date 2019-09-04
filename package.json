@@ -1,0 +1,33 @@
+{
+  "name": "wordpress-slideshow-plugin",
+  "version": "1.0.0",
+  "description": "A customizable slideshow plugin for a wordpress theme",
+  "main": "index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RichardHpa/wordpress-Slideshow-add-on.git"
+  },
+  "keywords": [
+    "wordpress",
+    "slideshow",
+    "plugin"
+  ],
+  "author": "Richard Hpa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RichardHpa/wordpress-Slideshow-add-on/issues"
+  },
+  "homepage": "https://github.com/RichardHpa/wordpress-Slideshow-add-on#readme",
+  "devDependencies": {
+    "grunt": "^1.0.4",
+    "grunt-contrib-csslint": "^2.0.0",
+    "grunt-contrib-cssmin": "^3.0.0",
+    "grunt-contrib-jshint": "^2.1.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify-es": "^3.3.0",
+    "grunt-contrib-watch": "^1.1.0"
+  }
+}
