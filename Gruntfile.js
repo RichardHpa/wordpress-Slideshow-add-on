@@ -36,6 +36,7 @@ module.exports = function(grunt) {
         jshint: {
             files: ['assets/js/script.js'],
             options: {
+                 esversion: 6,
                 globals:{
                     jQuery: true
                 }

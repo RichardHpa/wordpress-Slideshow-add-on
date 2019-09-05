@@ -1,7 +1,6 @@
 <?php
     function rh_slideshow_customize_register( $wp_customize ) {
 
-
         $wp_customize->add_section('rh_slideshow_section', array(
     		'title'      => 'Slideshow',
     		'description' => 'Settings for the slideshow plugin.',
@@ -31,7 +30,7 @@
 
         $wp_customize->add_setting('rh_slide_count_setting', array(
             'default'   => '5',
-            'transport' => 'refresh',
+            'transport' => 'active_callback',
         ));
 
         $rhSlideCount = 10;
