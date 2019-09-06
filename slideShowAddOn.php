@@ -14,3 +14,11 @@
 
 
     require( plugin_dir_path( __FILE__ ) . 'includes/slideshow_customizer.php');
+
+    function tbare_wordpress_plugin_demo( $args ) {
+        ob_start();
+        include(plugin_dir_path( __FILE__ ) . '/includes/slideshow_template.php');
+        return ob_get_clean();
+    }
+    add_shortcode('tbare-plugin-demo', 'tbare_wordpress_plugin_demo');
+    // make sure to use [tbare-plugin-demo]
