@@ -34,19 +34,27 @@ module.exports = function(grunt) {
             }
         },
         jshint: {
-            files: ['assets/js/script.js'],
+            files: ['assets/js/*.js', '!assets/js/*.min.js'],
             options: {
-                 esversion: 6,
+                esversion: 6,
                 globals:{
                     jQuery: true
                 }
             }
         },
         uglify: {
-            options: {
-                mangle: false
+            customizer: {
+                options: {
+                    mangle: false
+                },
+                files: {
+                    'assets/js/customizer.min.js': ['assets/js/customizer.js']
+                }
             },
-            my_target: {
+            frontEnd: {
+                options: {
+                    mangle: false
+                },
                 files: {
                     'assets/js/script.min.js': ['assets/js/script.js']
                 }
@@ -57,9 +65,13 @@ module.exports = function(grunt) {
                 files: ['assets/scss/*.scss'],
                 tasks: ['sass', 'csslint', 'cssmin']
             },
-            js: {
-                files: ['assets/js/*.js', '!assets/js/*.min.js'],
-                tasks: ['jshint', 'uglify']
+            customizer: {
+                files: ['assets/js/customizer.js'],
+                tasks: ['jshint', 'uglify:customizer']
+            },
+            frontEndJS: {
+                files: ['assets/js/script.js'],
+                tasks: ['jshint', 'uglify:frontEnd']
             }
         }
     });
@@ -73,5 +85,5 @@ module.exports = function(grunt) {
 
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('css', ['sass', 'csslint', 'cssmin']);
-    grunt.registerTask('js', ['jshint', 'uglify']);
+    grunt.registerTask('js', ['jshint', 'uglify:customizer', 'uglify:frontEnd']);
 }
