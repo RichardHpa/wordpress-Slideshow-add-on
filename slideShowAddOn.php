@@ -13,7 +13,7 @@ add_action( 'customize_controls_enqueue_scripts', 'custom_customize_enqueue' );
 
 function rh_plugin_style_enqueue(){
     wp_enqueue_style('rh_slideshow_style', plugin_dir_url(__FILE__) . '/assets/css/style.min.css', array(), '1.0.0', 'all');
-    // wp_enqueue_style('rh_slideshow_script', plugin_dir_url(__FILE__) . '/assets/css/style.min.css', array(), '1.0.0', 'all');
+    wp_enqueue_script('rh_slideshow_script', plugin_dir_url(__FILE__) . '/assets/js/script.min.js', array('jquery'), false, true);
 }
 add_action('wp_enqueue_scripts', 'rh_plugin_style_enqueue');
 
