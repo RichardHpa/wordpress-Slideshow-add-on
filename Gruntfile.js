@@ -17,6 +17,9 @@ module.exports = function(grunt) {
         csslint: {
             strict: {
                 options: {
+                    important: false,
+                    "adjoining-classes": false,
+                    "order-alphabetical": false,
                     import: 2
                 },
                 src: ['assets/css/*.css', 'assets/css/!*.min.css']
@@ -37,6 +40,7 @@ module.exports = function(grunt) {
             files: ['assets/js/*.js', '!assets/js/*.min.js'],
             options: {
                 esversion: 6,
+                sub: true,
                 globals:{
                     jQuery: true
                 }
