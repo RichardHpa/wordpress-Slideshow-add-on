@@ -4,17 +4,19 @@
  ?>
 
 <h1>SlideShow</h1>
-<div id="rhSlideshowContainer <?php if($rhSlideType === 'full'){echo 'alignfull';}; ?>">
-    <?php for($i=1;$i<=$rhSlideCount;$i++): ?>
-        <?php
-            if(get_theme_mod('rh_slide_' . $i . '_setting')){
-                $rhSlideImage = get_theme_mod('rh_slide_' . $i . '_setting');
-                // echo $rhSlideImage;
-            } else {
-                $rhSlideImage = plugin_dir_url(__DIR__). 'assets/images/placeholderSlide.jpg';
-            }
-        ?>
-        <!-- <h3>Slide Num-<?= $i; ?></h3> -->
-        <img class="rhSlideItem" src="<?= $rhSlideImage; ?>" alt="">
-    <?php endfor; ?>
+<div class="rhSlideshowContainer <?php if($rhSlideType === 'full'){echo 'alignfull';}; ?>">
+    <div class="rhSlideShowInner">
+        <?php for($i=1;$i<=$rhSlideCount;$i++): ?>
+            <?php
+                if(get_theme_mod('rh_slide_' . $i . '_setting')){
+                    $rhSlideImage = get_theme_mod('rh_slide_' . $i . '_setting');
+                } else {
+                    $rhSlideImage = plugin_dir_url(__DIR__). 'assets/images/placeholderSlide.jpg';
+                }
+            ?>
+            <div class="rhSlideItem">
+                <img class="" src="<?= $rhSlideImage; ?>" alt="">
+            </div>
+        <?php endfor; ?>
+    </div>
 </div>

@@ -1,10 +1,31 @@
-#rhSlideshowContainer{
+.rhSlideshowContainer{
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
     &.alignfull{
         margin-top: 32px !important;
         margin-bottom: 32px !important;
     }
+    .rhSlideShowInner{
+        position: relative;
+        transform: translateX(0);
+        width: 200%;
+        .rhSlideItem{
+            float: left;
+            img{
+                width: 100%;
+                display: block;
+            }
+        }
+        &:after{
+            clear: both;
+            display: block;
+            content: '';
+        }
+    }
 
 }
-.rhSlideItem{
-    width: 100%;
+
+.transition {
+  transition: .7s;
 }
