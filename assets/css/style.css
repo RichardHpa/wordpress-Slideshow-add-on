@@ -24,6 +24,34 @@
   display: block;
   content: '';
 }
+.rhSlideshowContainer .rhSlideIndicator {
+  position: absolute;
+  bottom: 0;
+  list-style: none;
+  list-style-position: inside;
+  padding-left: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.rhSlideshowContainer .rhSlideIndicator li {
+  box-sizing: border-box;
+  margin: 10px 5px;
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  border-radius: 50%;
+  float: left;
+  opacity: 0.5;
+}
+.rhSlideshowContainer .rhSlideIndicator li:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+.rhSlideshowContainer .rhSlideIndicator li.active {
+  opacity: 1;
+}
 
 .transition {
   transition: .7s;

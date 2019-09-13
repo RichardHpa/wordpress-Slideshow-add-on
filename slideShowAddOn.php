@@ -20,7 +20,8 @@ function rh_plugin_style_enqueue(){
     wp_enqueue_script('rh_slideshow_script', plugin_dir_url(__FILE__) . '/assets/js/script.min.js', array('jquery'), false, true);
 
 	wp_localize_script('rh_slideshow_script', 'post_counts', array(
-		'count'=> get_theme_mod('rh_slide_count_setting', 5)
+		'count'=> get_theme_mod('rh_slide_count_setting', 5),
+		'duration'=> get_theme_mod('rh_slide_speed_setting', 3)
 	));
 }
 add_action('wp_enqueue_scripts', 'rh_plugin_style_enqueue');

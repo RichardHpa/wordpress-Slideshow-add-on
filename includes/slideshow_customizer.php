@@ -21,10 +21,50 @@
                 'section'    => 'rh_slideshow_section',
                 'type'           => 'radio',
                 'choices'        => array(
-                'full'   => 'Full',
-                'fixed'  => 'Fixed'
-            ),
-            'settings'   => 'rh_slide_width_setting',
+                    'full'   => 'Full',
+                    'fixed'  => 'Fixed'
+                ),
+                'settings'   => 'rh_slide_width_setting',
+                'description' => 'Do you want the slideshow to go across the entire page, or fixed within its container.',
+            )
+        ));
+
+        $wp_customize->add_setting('rh_slide_speed_setting', array(
+            'default'   => '3',
+            'priority'   => 10,
+            'transport' => 'refresh',
+        ));
+
+        $wp_customize->add_control(new WP_Customize_Control(
+            $wp_customize,
+            'rh_slide_speed_control',
+            array(
+                'label'      => 'Slideshow Duration (Seconds)',
+                'section'    => 'rh_slideshow_section',
+                'type'           => 'number',
+                'settings'   => 'rh_slide_speed_setting',
+                'description' => 'How many seconds do you want between each slide transition.'
+            )
+        ));
+
+        $wp_customize->add_setting('rh_slide_indicators_setting', array(
+            'default'   => 'on',
+            'priority'   => 10,
+            'transport' => 'refresh',
+        ));
+
+        $wp_customize->add_control(new WP_Customize_Control(
+            $wp_customize,
+            'rh_slide_indicators_control',
+            array(
+                'label'      => 'Slideshow Indicators',
+                'section'    => 'rh_slideshow_section',
+                'type'           => 'radio',
+                'choices'        => array(
+                    'on'   => 'On',
+                    'off'  => 'Off'
+                ),
+                'settings'   => 'rh_slide_indicators_setting',
             )
         ));
 
